@@ -19,7 +19,7 @@ class UI {
         <td class="favoritIcon"><i class="hoverStyle fa fa-plus"></i></td>
       </tr>
     `
-    i +=1 
+    i +=1
     });
   }
 
@@ -34,15 +34,32 @@ class UI {
 
     if(type === 'market') {
       if(number >= 1000000000) {
-        console.log(number);
         return `${formatter.format(number/1000000000)}B`
       }
       if(number >= 1000000) {
-        console.log(number);
         return `${formatter.format(number/1000000)}M`
       }
     }
 
     return formatter.format(number)
+  }
+
+  favoritList(image, name, price) {
+    console.log(image,name,price);
+    const favoritContent = document.querySelector('.favorit-content')
+    const favorit = document.querySelector('.favorit')
+
+    const div = document.createElement('div')
+    div.classList.add('favorit-card')
+    div.setAttribute('type', name)
+
+    div.innerHTML = `
+    <img src=${image} width="35px" alt="${name}" title="${name}">
+    <h3>${name}</h3>
+    <p class="price">${price}</p>
+    `
+    favorit.style.transition = 'height 0.2s ease-in'
+    
+    favoritContent.appendChild(div)
   }
 }
