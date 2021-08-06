@@ -45,7 +45,6 @@ class UI {
   }
 
   favoritList(image, name, price) {
-    console.log(image,name,price);
     const favoritContent = document.querySelector('.favorit-content')
     const favorit = document.querySelector('.favorit')
 
@@ -57,9 +56,14 @@ class UI {
     <img src=${image} width="35px" alt="${name}" title="${name}">
     <h3>${name}</h3>
     <p class="price">${price}</p>
+    <i class="remove fa fa-plus"></i>
     `
-    favorit.style.transition = 'height 0.2s ease-in'
-    
     favoritContent.appendChild(div)
+  }
+
+  deleteFavorite(row) {
+    if(row.target.classList.contains('remove')) {
+      row.target.parentElement.remove()
+    }
   }
 }
