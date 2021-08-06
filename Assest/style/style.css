@@ -185,3 +185,17 @@ th {
   font-family: 'Gothic A1';
   text-transform: uppercase;
 }
+
+.favorit div h1 {
+  margin-bottom: 50px;
+  color: #1b1b1b;
+}
+
+.remove {
+  cursor: pointer;
+  color: red;
+  transform: rotate(45deg);
+  padding: 6px;
+  border: 1px solid red;
+  border-radius: 50%;
+}
