@@ -7,7 +7,7 @@ class UI {
       <tr class="rowStyle">
         <td class="count">${i}</td>
         <td class="name">
-          <img src="${element.logo_url}" width="35px">
+          <img src="${element.logo_url}" width="35px" alt="${element.id}" title="${element.id}">
           <h4>${element.name}</h4>
           <h5>${element.symbol}</h5>
         </td>
@@ -31,7 +31,7 @@ class UI {
     })
 
     let number = Number(numb)
-    
+
     if(type === 'market') {
       if(number >= 1000000000) {
         console.log(number);
