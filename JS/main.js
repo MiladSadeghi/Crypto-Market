@@ -1,7 +1,18 @@
 const userInterFace = new UI()
 const cryptoAPI = new CryptoAPI()
 
+let pageNumber;
+
 document.addEventListener('DOMContentLoaded', () => {
+  
+  const page = document.querySelector('.page')
+  page.addEventListener('click', (e) => {
+    pageNumber = userInterFace.pagenation(e.target)
+    const resultAPI = cryptoAPI.getDataFromAPI(pageNumber)
+  .then((data) => {
+    userInterFace.showResult(data)
+    })
+  })
 
   const resultAPI = cryptoAPI.getDataFromAPI()
   .then((data) => {
