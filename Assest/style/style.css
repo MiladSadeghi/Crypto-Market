@@ -199,3 +199,29 @@ th {
   border: 1px solid red;
   border-radius: 50%;
 }
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prev, .now, .next{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba(207, 204, 24, 0.198);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 15px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  padding: 15px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.prev {
+  display: none;
+}
+
