@@ -134,3 +134,33 @@ th {
   transform: scale(1.3);
   color: #414cb3;
 }
+
+.thDiv {
+  color: #1b1b1b;
+}
+
+.favorit {
+  width: 100%;
+  height: 70px;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba(207, 204, 24, 0.198);
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 15px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  margin-top: 20px;
+  padding: 20px;
+  color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.favorit-content {
+  display: flex;
+}
+
+.favorit-card {
+  display: flex;
+  align-items: center;
+}
