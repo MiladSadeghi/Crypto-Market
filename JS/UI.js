@@ -1,6 +1,7 @@
 class UI {
   showResult(result) {
     const row = document.querySelector('tbody')
+    row.innerHTML = ''
     let i = 1
     result.forEach(element => {
       row.innerHTML += `
@@ -66,4 +67,55 @@ class UI {
       row.target.parentElement.remove()
     }
   }
+
+  pagenation(page) {
+    const row = document.querySelector('tbody')
+    if(page.classList.contains('next')) {
+      let nextValue = Number(page.getAttribute('value')) + 1 
+      page.setAttribute('value', nextValue)
+      page.innerHTML = nextValue
+
+      let nowValue = nextValue - 1
+      let now = page.parentElement.children[1]
+      console.log(nowValue);
+      now.setAttribute('value', nowValue)
+      now.innerHTML = nowValue
+
+      let prev = page.parentElement.children[0]
+      let prevValue = nowValue - 1
+      prev.setAttribute('value', prevValue)
+      prev.innerHTML = prevValue
+      prev.style.display = 'flex'
+
+      return nextValue
+    }
+
+    if(page.classList.contains('prev')) {
+      let next = page.parentElement.children[2]
+      let nextValue = Number(next.getAttribute('value')) - 1
+      next.setAttribute('value', nextValue)
+      next.innerHTML = nextValue
+
+      let nowValue = nextValue - 1
+      let now = page.parentElement.children[1]
+      now.setAttribute('value', nowValue)
+      now.innerHTML = nowValue
+
+      let prev = page.parentElement.children[0]
+      let prevValue = nowValue - 1
+      prev.setAttribute('value', prevValue)
+      prev.innerHTML = prevValue
+
+      if(prevValue === 0) {
+        prev.style.display = 'none'
+      }
+
+      return prevValue
+    }
+
+    if(page.classList.contains('now')) {
+      return false
+    }
+  }
+  
 }
