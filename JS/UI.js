@@ -4,7 +4,7 @@ class UI {
     let i = 1
     result.forEach(element => {
       row.innerHTML += `
-      <tr>
+      <tr class="rowStyle">
         <td class="count">${i}</td>
         <td class="name">
           <img src="${element.logo_url}" width="35px">
@@ -13,9 +13,9 @@ class UI {
         </td>
         <td class="price">${this.calculateNumb('price' ,element.price)}</td>
         <td class="change">${Number(element['1d'].price_change_pct*100).toFixed(2)}%</td>
-        <td class="volume">${this.calculateNumb('volume' ,element['1d'].volume)}</td>
-        <td class="cap">${element.market_cap}</td>
-        <td class="supply">${element.max_supply}</td>
+        <td class="volume">${this.calculateNumb('market' ,element['1d'].volume)}</td>
+        <td class="cap">${this.calculateNumb('market' ,element.market_cap)}</td>
+        <td class="supply">${this.calculateNumb('market' ,element.max_supply)}</td>
         <td class="favoritIcon"><i class="fa fa-plus"></i></td>
       </tr>
     `
@@ -27,12 +27,12 @@ class UI {
     const formatter = new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
-      minimumFractionDigits: 0
+      minimumFractionDigits: 3
     })
 
     let number = Number(numb)
-
-    if(type === 'volume') {
+    
+    if(type === 'market') {
       if(number >= 1000000000) {
         console.log(number);
         return `${formatter.format(number/1000000000)}B`
@@ -43,6 +43,6 @@ class UI {
       }
     }
 
-    return number
+    return formatter.format(number)
   }
 }
