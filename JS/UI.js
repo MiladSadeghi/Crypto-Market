@@ -3,7 +3,13 @@ class UI {
     const row = document.querySelector("tbody");
     row.innerHTML = "";
     let i = 1;
+    let timespan;
     result.forEach((element) => {
+      if(!(element["1d"])) {
+        timespan = element["7d"]
+      } else {
+        timespan = element["1d"]
+      }
       row.innerHTML += `
       <tr class="rowStyle">
         <td class="count hoverStyle">${i}</td>
@@ -18,12 +24,10 @@ class UI {
           "price",
           element.price
         )}</td>
-        <td class="change hoverStyle">${Number(
-          element["1d"].price_change_pct * 100
-        ).toFixed(2)}%</td>
+        <td class="change hoverStyle">${Number(timespan.price_change_pct * 100).toFixed(2)}%</td>
         <td class="volume hoverStyle">${this.calculateNumb(
           "market",
-          element["1d"].volume
+          timespan.volume
         )}</td>
         <td class="cap hoverStyle">${this.calculateNumb(
           "market",
@@ -44,7 +48,7 @@ class UI {
     const formatter = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
-      minimumFractionDigits: 3,
+      minimumFractionDigits: 0,
     });
 
     let number = Number(numb);
