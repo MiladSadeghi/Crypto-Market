@@ -63,8 +63,6 @@ class UI {
 
   favoritList(image, name, price) {
     const favoritContent = document.querySelector(".favorit-content");
-    const favorit = document.querySelector(".favorit");
-
     const div = document.createElement("div");
     div.classList.add("favorit-card");
     div.setAttribute("type", name);
@@ -75,7 +73,7 @@ class UI {
     <p class="price">${price}</p>
     <i class="remove fa fa-plus"></i>
     `;
-    favoritContent.appendChild(div);
+    favoritContent.appendChild(div)
   }
 
   deleteFavorite(row) {
