@@ -225,3 +225,15 @@ th {
   display: none;
 }
 
+@media only screen and (max-width: 1024px) { 
+  .container {
+    width: 95%;
+  }
+  .favorit-card {
+    width: 32.2%;
+  }
+  .price, .change, .volume, .cap, .supply {
+    font-size: 1.35rem;
+  }
+}
+
