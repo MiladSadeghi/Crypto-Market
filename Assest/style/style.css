@@ -246,4 +246,31 @@ th {
   .name h4 {
     width: 50%;
   }
+  .favorit-card {
+    width: 32%;
+  }
+  .favorit-card img {
+    width: 28px;
+  }
+}
+
+@media only screen and (max-width: 768px) { 
+  .favorit-card {
+    width: 31.8%;
+  }
+  .favorit-card img {
+    width: 25px;
+  }
+  .favorit-card h3 {
+    font-size: 0.8rem;
+  }
+  .favorit-card p {
+    font-size: 1.1rem;
+  }
+  table {
+    padding: 13px;
+  }
+  .thDiv {
+    font-size: 1rem;
+  }
 }
