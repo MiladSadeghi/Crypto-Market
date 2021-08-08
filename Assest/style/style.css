@@ -274,3 +274,16 @@ th {
     font-size: 1rem;
   }
 }
+
+@media only screen and (max-width: 600px) { 
+  .favorit-card {
+    width: 31.3%;
+  }
+  .favorit-card {
+    flex-direction: column;
+    height: 150px;
+  }
+  .currencies {
+    overflow-x: scroll;
+  }
+}
