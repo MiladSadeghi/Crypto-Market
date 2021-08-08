@@ -65,8 +65,7 @@ nav h1 {
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: space-between;
-  padding: 0 50px;
+  justify-content: space-evenly;
 }
 
 tbody td {
@@ -237,3 +236,14 @@ th {
   }
 }
 
+@media only screen and (max-width: 900px) { 
+  .name img {
+    width: 30px;
+  }
+  .price, .change, .volume, .cap, .supply {
+    font-size: 1.2rem;
+  }
+  .name h4 {
+    width: 50%;
+  }
+}
