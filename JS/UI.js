@@ -83,6 +83,8 @@ class UI {
   deleteFavorite(row) {
     if (row.target.classList.contains("remove")) {
       row.target.parentElement.remove();
+      const deleteFromArray = saveName.indexOf(row.target.parentElement.getAttribute('type'))
+      saveName.splice(deleteFromArray, deleteFromArray + 1)
     }
   }
 
