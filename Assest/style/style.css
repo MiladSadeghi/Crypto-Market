@@ -287,3 +287,9 @@ th {
     overflow-x: scroll;
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .favorit-card {
+    width: 46%;
+  }
+}
